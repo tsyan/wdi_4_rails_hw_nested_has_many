@@ -8,6 +8,10 @@ gem 'pg'
 
 group :development do
   gem "rails-erd", github: 'bshelton229/rails-erd', branch: 'mavericks'
+  gem 'pry-rails'
+	gem 'pry-nav'
+	gem 'better_errors'
+	gem 'binding_of_caller'
 end
 
 # Use SCSS for stylesheets
