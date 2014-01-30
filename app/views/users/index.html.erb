@@ -1,9 +1,14 @@
 <h1>All Users</h1>
 
+<h2><%= link_to 'Create New User', new_user_path %></h2>
+
 <% @users.each do |user| %>
 	<div class="user">
-		<p><%= user.name %><span>&nbsp;&nbsp;&nbsp;</span><%= user.email %></p>
+		<p><%= link_to user.name, user_path(user) %></p>
+			<ul>
+				<li><%= user.email %></li>
+			</ul>
 	</div>
 <% end %>
 
-<%= link_to 'Create New User', new_user_path %>
+

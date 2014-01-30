@@ -4,11 +4,11 @@ class UsersController < ApplicationController
 		@users = User.all
 	end
 
-	def new # the form
+	def new # the form to create a new user
 		@user = User.new
 	end
 
-	def create # update database
+	def create # add new user to database
 		@user = User.new(user_params)
 
 		if @user.save
@@ -16,6 +16,10 @@ class UsersController < ApplicationController
   	else
   		render :new
   	end
+	end
+
+	def show # show a single user's details, find by url parameter
+		@user = User.find(params[:id])
 	end
 
 	private
