@@ -1,16 +1,14 @@
 # == Schema Information
 #
-# Table name: articles
+# Table name: comments
 #
 #  id         :integer          not null, primary key
-#  title      :text
 #  body       :text
-#  user_id    :integer
+#  article_id :integer
 #  created_at :datetime
 #  updated_at :datetime
 #
 
-class Article < ActiveRecord::Base
-	belongs_to :user
-	has_many :comments
+class Comment < ActiveRecord::Base
+	belongs_to :article
 end
