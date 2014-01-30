@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 	 before_action :find_article, only: [:show, :edit, :update]
-  before_action :get_user, only: [:new, :create, :edit, :update]
+  before_action :get_user, only: [:new, :create, :edit, :update, :show]
 
 	def index
 		if params[:user_id]
@@ -15,16 +15,14 @@ class ArticlesController < ApplicationController
 	end
 
 	def create
-		@user.articles << Article.new(article_params)
+		article = Article.new(article_params)
 
-		if @user.articles.save
+		if @user.articles << article
   		redirect_to user_article_path(article.user_id, article.id)
   	else
   		render :new
   	end
 
-  	# @user.articles << article = Article.create!(article_params)
-   #  redirect_to user_article_path(article.user_id, article.id)
 	end
 
 	def show
@@ -39,7 +37,7 @@ class ArticlesController < ApplicationController
 	private
 
 	def article_params
-		params.require(:id).permit(:title, :body, :user_id)
+		params.require(:article).permit(:title, :body, :user_id)
 	end
 
 	def find_article

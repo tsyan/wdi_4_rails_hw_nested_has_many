@@ -1,0 +1,11 @@
+<h1>Create a New Article!</h1>
+
+<h3>The author of this article is: <%= @user.name %></h3>
+
+<%= form_for [@user, @article] do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<%= f.label :body %>
+	<%= f.text_area :body %>
+	<%= f.submit %>
+<% end %>

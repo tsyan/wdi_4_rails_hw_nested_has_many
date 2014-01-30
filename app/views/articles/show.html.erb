@@ -1,0 +1,7 @@
+<h1><%= @article.title %></h1>
+
+<h2>by <%= @user.name %></h2>
+
+<p><%= @article.body %></p>
+
+<p><%= link_to "Back to #{@user.name}'s Articles", user_path(@user) %></p>
