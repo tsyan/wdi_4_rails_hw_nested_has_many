@@ -7,10 +7,11 @@
 	<div class="article">
 		<p><%= link_to article.title, user_article_path(@user, article) %></p>
 			<ul>
-				<li><%= truncate(article.body, length: 140) %></li>
+				<li>snippet: <%= truncate(article.body, length: 140) %></li>
 			</ul>
 	</div>
 	<% end %>
 
-<p><%= link_to "Back to All Users", users_path %></p>
+<h3><%= link_to "Back to All Users", users_path %></h3>
+<h3><%= link_to "Back to All Articles", root_path %></h3>
 

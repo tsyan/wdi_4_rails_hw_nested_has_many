@@ -1,12 +1,12 @@
 class ArticlesController < ApplicationController
-	 before_action :find_article, only: [:show, :edit, :update]
+	before_action :find_article, only: [:show, :edit, :update]
   before_action :get_user, only: [:new, :create, :edit, :update, :show]
 
 	def index
 		if params[:user_id]
 			@articles = User.find(params[:user_id]).articles
 		else
-			@articles = Article.all
+			@articles = Article.all.order(created_at: :desc)
 		end
 	end
 
