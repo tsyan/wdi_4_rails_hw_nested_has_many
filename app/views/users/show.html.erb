@@ -8,6 +8,7 @@
 		<p><%= link_to article.title, user_article_path(@user, article) %></p>
 			<ul>
 				<li>snippet: <%= truncate(article.body, length: 140) %></li>
+				<li>comments: #</li>
 			</ul>
 	</div>
 	<% end %>
