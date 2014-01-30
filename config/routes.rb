@@ -1,6 +1,6 @@
 SharedBlog::Application.routes.draw do
-  resources :articles do
-	  resources :users
+  resources :users do
+	  resources :articles
 	end
   root to: 'user#index'
 end
