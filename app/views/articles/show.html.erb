@@ -1,5 +1,7 @@
 <h1><%= @article.title %></h1>
 
+<h3><%= link_to "Edit Article", edit_user_article_path(@user, @article) %></h3>
+
 <h2>by <%= @user.name %></h2>
 
 <p><%= @article.body %></p>

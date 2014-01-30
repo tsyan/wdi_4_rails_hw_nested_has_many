@@ -32,6 +32,8 @@ class ArticlesController < ApplicationController
 	end
 
 	def update
+		@article.update_attributes(article_params)
+		redirect_to user_article_path(@article.user_id, @article.id)
 	end
 
 	private
