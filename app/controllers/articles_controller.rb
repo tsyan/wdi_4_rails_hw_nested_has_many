@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 	before_action :find_article, only: [:show, :edit, :update]
-  before_action :get_user, only: [:new, :create, :edit, :update, :show]
+  before_action :find_user, only: [:new, :create, :edit, :update, :show]
 
 	def index
 		if params[:user_id]
@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-  def get_user
+  def find_user
     @user = User.find(params[:user_id])
   end
 

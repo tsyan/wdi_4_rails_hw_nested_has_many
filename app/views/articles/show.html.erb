@@ -8,6 +8,12 @@
 
 <h3>Comments</h3>
 
-<p>comments go here</p>
+<% @article.comments.each do |comment| %>
+	<ul>
+		<li><%= comment.body %></li>
+	</ul>
+<% end %>
+
+<h3><%= link_to "Add Comment", new_user_article_comment_path(@user, @article) %></h3>
 
 <h3><%= link_to "Back to #{@user.name}'s Articles", user_path(@user) %></h3>
